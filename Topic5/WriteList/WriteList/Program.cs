@@ -11,7 +11,7 @@ namespace WriteList
     {
         static void Main(string[] args)
         {
-            string[] lines = System.IO.File.ReadAllLines(@"C:\Users\ASUS\Documents\Test\Testfile.txt");
+            string[] lines = System.IO.File.ReadAllLines(@"C:\Users\admin\Documents\Test\Test.txt");
             System.Console.WriteLine("Contents file = ");
             foreach (string line in lines)
             {
