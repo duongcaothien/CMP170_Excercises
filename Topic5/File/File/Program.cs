@@ -15,13 +15,13 @@ namespace File
             string userName = Console.ReadLine();
 
             string[] lines = { userName };
-            File.WriteAllLines(@"C:\Users\ASUS\Documents\Test\Testfile.txt", lines);
+            File.WriteAllLines(@"C:\Users\admin\Documents\Test\Test.txt", lines);
             foreach (string line in lines)
             {
                 Console.WriteLine("\t" + line);
             }
             Console.WriteLine("the contents of the file: ");
-            string[] readText = File.ReadAllLines(@"C:\Users\ASUS\Documents\Test\Testfile.txt");
+            string[] readText = File.ReadAllLines(@"C:\Users\admin\Documents\Test\Test.txt");
             foreach (string s in readText)
             {
                 Console.WriteLine("\t" + s);
