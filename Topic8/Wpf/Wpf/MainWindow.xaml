@@ -1,0 +1,44 @@
+﻿<Window x:Class="Wpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Wpf"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Margin="10,15">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="0.2*"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions >
+
+        <Label Content="Country : "  Background="Transparent" FontSize="20" HorizontalContentAlignment="Center"  VerticalContentAlignment="Center"></Label>
+        <Label Content="City : "  Grid.Row="1" Background="Transparent" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
+        <Label Content="Address : "  Grid.Row="2" Background="Transparent" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
+        <Label Content="Home phone : "  Grid.Row="3" Background="Transparent" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" ></Label>
+
+
+        <Label Content="Region : "  Grid.Column="3" Background="Transparent" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" ></Label>
+        <Label Content="Postal Code : "  Grid.Column="3" Grid.Row="1" Background="Transparent" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
+        <Label Content="Extension : "  Grid.Column="3" Grid.Row="3" Background="Transparent" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" ></Label>
+
+        <TextBox Grid.Column="1" VerticalAlignment="Center"  Padding="6" FontSize="20">USA</TextBox>
+        <TextBox Grid.Column="1" Grid.Row="1" VerticalAlignment="Center"  Padding="6" FontSize="20">Seattle</TextBox>
+        <TextBox Grid.Column="1" Grid.Row="2"  VerticalAlignment="Center"  Padding="6" FontSize="20" Grid.ColumnSpan="4" >507 - 20th Ave.E. Apt.2A</TextBox>
+        <TextBox Grid.Column="1" Grid.Row="3" VerticalAlignment="Center"  Padding="6" FontSize="20">(206) 555-9857</TextBox>
+
+        <TextBox Grid.Column="4" VerticalAlignment="Center"  Padding="6" FontSize="20">WA</TextBox>
+        <TextBox Grid.Column="4" Grid.Row="1" VerticalAlignment="Center"  Padding="6" FontSize="20">98122</TextBox>
+        <TextBox Grid.Column="4" Grid.Row="3" VerticalAlignment="Center"  Padding="6" FontSize="20">5467</TextBox>
+    </Grid>
+</Window>
