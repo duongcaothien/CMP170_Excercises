@@ -60,25 +60,7 @@ namespace StudentManagement1
         public ICommand OpenDetailCommand { get; set; }
 
 
-        public Boolean Ismale
-        {
-            get => ismale1; set
-            {
-                ismale1 = !value;
-                OnPropertyChanged(nameof(Ismale));
-
-            }
-        }
-
-        public Boolean IsFemale
-        {
-            get => !ismale1; set
-            {
-                ismale1 = !value;
-                OnPropertyChanged(nameof(IsFemale));
-
-            }
-        }
+        
 
         public class Student
         {

@@ -45,7 +45,8 @@
         <RadioButton GroupName="gioitinh"  IsChecked="{Binding IsFemale}" Grid.Row="3" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Top"  Padding="10" FontSize="20">FeMale</RadioButton>
 
         <ComboBox  Grid.Row="4" Grid.Column="2"  VerticalAlignment="Center"  Padding="8" FontSize="20">
-            <ComboBoxItem IsSelected="True">19DTHQA1</ComboBoxItem>
+            <ComboBoxItem IsSelected="true" Content="{Binding Path=Class}"></ComboBoxItem>
+            <ComboBoxItem>19DTHQA1</ComboBoxItem>
             <ComboBoxItem>19DTHQA2</ComboBoxItem>
             <ComboBoxItem>19DTHQA3</ComboBoxItem>
         </ComboBox>
