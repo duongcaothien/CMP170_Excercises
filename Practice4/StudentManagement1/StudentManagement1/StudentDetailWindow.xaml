@@ -1,0 +1,57 @@
+﻿<Window x:Class="StudentManagement1.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StudentManagement1"
+        mc:Ignorable="d"
+        Title="StudentDetail" Height="325" Width="600">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="0.1*"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+
+        </Grid.RowDefinitions >
+
+        <Label Content="Student ID"  FontSize="20"  HorizontalAlignment="Stretch"  VerticalAlignment="Center"  ></Label>
+        <Label Content="First Name"  Grid.Row="1" FontSize="20"  HorizontalAlignment="Stretch"  VerticalAlignment="Center"  ></Label>
+        <Label Content="Last Name"  Grid.Row="2" FontSize="20"  HorizontalAlignment="Stretch"  VerticalAlignment="Center"  ></Label>
+        <Label Content="Gender"  Grid.Row="3" FontSize="20"  HorizontalAlignment="Stretch"  VerticalAlignment="Center"  ></Label>
+        <Label Content="Class"  Grid.Row="4"  FontSize="20"  HorizontalAlignment="Stretch"  VerticalAlignment="Center"  ></Label>
+        <Label Content="Email"  Grid.Row="5" FontSize="20"  HorizontalAlignment="Stretch"  VerticalAlignment="Center"  ></Label>
+
+
+        <TextBox  Grid.Column="2"  VerticalAlignment="Center"  Padding="5" FontSize="20" Text="{Binding Path =studentId}" ></TextBox>
+        <TextBox Grid.Row="1" Grid.Column="2"  VerticalAlignment="Center"  Padding="5" FontSize="20" Text="{Binding Path =firstname}" ></TextBox>
+        <TextBox  Grid.Row="2" Grid.Column="2"  VerticalAlignment="Center"  Padding="5" FontSize="20"  Text="{Binding Path =lastname}" ></TextBox>
+        <TextBox  Grid.Row="5" Grid.Column="2"  VerticalAlignment="Center"  Padding="5" FontSize="20" Text="{Binding Path =email}" ></TextBox>
+
+        <Button Content="Save" Command="{Binding SaveCommand}" Grid.Row="6" HorizontalAlignment="Right" Padding="10" VerticalAlignment="Center" Width="80" FontSize="20" ></Button>
+        <Button Content="Cancel" Grid.Row="6" Grid.Column="2" HorizontalAlignment="Left" Padding="10" VerticalAlignment="Center" Width="80" FontSize="20"  ></Button>
+
+        <RadioButton GroupName="gioitinh"  IsChecked="{Binding Ismale}"   Grid.Row="3" Grid.Column="2" VerticalAlignment="Top"   Padding="10" FontSize="20">Male</RadioButton>
+        <RadioButton GroupName="gioitinh"  IsChecked="{Binding IsFemale}" Grid.Row="3" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Top"  Padding="10" FontSize="20">FeMale</RadioButton>
+
+        <ComboBox  Grid.Row="4" Grid.Column="2"  VerticalAlignment="Center"  Padding="8" FontSize="20">
+            <ComboBoxItem IsSelected="true" Content="{Binding Path=Class}"></ComboBoxItem>
+            <ComboBoxItem>19DTHQA1</ComboBoxItem>
+            <ComboBoxItem>19DTHQA2</ComboBoxItem>
+            <ComboBoxItem>19DTHQA3</ComboBoxItem>
+        </ComboBox>
+
+
+    </Grid>
+</Window>
+
