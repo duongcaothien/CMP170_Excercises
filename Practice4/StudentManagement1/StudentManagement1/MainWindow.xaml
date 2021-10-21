@@ -96,20 +96,22 @@
                             <RowDefinition></RowDefinition>
                         </Grid.RowDefinitions>
 
-                        <TextBox Style="{StaticResource styleTextBox}"></TextBox>
+                        <TextBox Style="{StaticResource styleTextBox}" Text="{Binding Path=SearchKeyword}"></TextBox>
 
-                        <ComboBox Grid.Column="1" Style="{StaticResource StyleComboBox}" >
+                        <ComboBox SelectedValue="{Binding SelectedClass}" Grid.Column="1" Style="{StaticResource StyleComboBox}" >
+                            <ComboBoxItem></ComboBoxItem>
                             <ComboBoxItem IsSelected="True">19DTHQA1</ComboBoxItem>
                             <ComboBoxItem>19DTHQA2</ComboBoxItem>
+                            <ComboBoxItem>19DTHQA3</ComboBoxItem>
 
                         </ComboBox>
 
-                        <Button Command="{Binding SearchCommand}" Grid.Column="2" Content="Search" Style="{StaticResource StyleButton}"></Button>
-                        <Button Grid.Column="3" Content="Reset" Style="{StaticResource StyleButton}"></Button>
+                        <Button Command="{Binding SearchCommand}" Grid.Column="2" Content="Search" Style="{StaticResource StyleButton}" Click="Button_Click"></Button>
+                        <Button Command="{Binding ResetCommand}" Grid.Column="3" Content="Reset" Style="{StaticResource StyleButton}"></Button>
 
                     </Grid>
 
-                    <ListBox MaxHeight="280" HorizontalContentAlignment="Stretch" BorderThickness="3" ItemsSource="{Binding Students}" SelectedItem="{Binding SelectedStudent}" ItemTemplate="{StaticResource myTaskTemplate}" >
+                    <ListBox MaxHeight="280" HorizontalContentAlignment="Stretch" BorderThickness="3" ItemsSource="{Binding Students}" SelectedItem="{Binding Selectedstudent}" ItemTemplate="{StaticResource myTaskTemplate}" >
 
                     </ListBox>
 

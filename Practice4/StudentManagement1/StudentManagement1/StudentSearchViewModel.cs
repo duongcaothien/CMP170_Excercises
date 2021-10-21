@@ -6,12 +6,18 @@ using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Windows.Input;
+using static StudentManagement1.IStudentService1;
 
 namespace StudentManagement1
 {
     class StudentSearchViewModel : BaseViewModel
     {
         private string m_searchKeyword;
+        private IStudentService m_studentSrv;
+        private string m_selectedClass;
+        private bool ismale1;
+        private Student m_selectedStudent;
+
 
         public string SearchKeyword
         {
@@ -24,7 +30,6 @@ namespace StudentManagement1
         }
 
 
-        private string m_selectedClass;
         public string SelectedClass
         {
             get => m_selectedClass;
@@ -35,21 +40,15 @@ namespace StudentManagement1
             }
         }
 
-
-        private Student m_selectedStudent;
-        private bool ismale1;
-
-        public Student SelectedStudent
+        public Student Selectedstudent
         {
             get => m_selectedStudent;
             set
             {
                 m_selectedStudent = value;
-                OnPropertyChanged(nameof(SelectedStudent));
+                OnPropertyChanged(nameof(Selectedstudent));
             }
         }
-
-
 
         public ObservableCollection<Student> Students { get; set; }
 
@@ -84,18 +83,40 @@ namespace StudentManagement1
 
         public StudentSearchViewModel()
         {
-            var jsonString = File.ReadAllText("Student_Data.json");
-            var students = JsonSerializer.Deserialize<List<Student>>(jsonString);
-            Students = new ObservableCollection<Student>(students);
+            //var jsonString = File.ReadAllText("Student_Data.json");
+            //var students = JsonSerializer.Deserialize<List<Student>>(jsonString);
+            //Students = new ObservableCollection<Student>(students);
+            m_studentSrv = new StudentServiceWithFile();
+            Students = new ObservableCollection<Student>(m_studentSrv.SearchStudent(string.Empty, string.Empty));
+
+            SearchCommand = new ConditionalCommand(x => DoSearch());
+            ResetCommand = new ConditionalCommand(x => DoReset());
             OpenDetailCommand = new ConditionalCommand(x => DoOpenDetail());
         }
 
         public void DoOpenDetail()
         {
-            var studentDetailViewModel = new StudentDetailViewModel(SelectedStudent);
+            var studentDetailViewModel = new StudentDetailViewModel(Selectedstudent);
             Window1 studentDetail = new Window1();
             studentDetail.DataContext = studentDetailViewModel;
             studentDetail.ShowDialog();
+
+        }
+
+        public void DoReset()
+        {
+            SearchKeyword = null;
+            SelectedClass = null;
+        }
+
+        private void DoSearch()
+        {
+            Students.Clear();
+            var result = m_studentSrv.SearchStudent(SearchKeyword, m_selectedClass);
+            foreach (var s in result)
+            {
+                Students.Add(s);
+            }
         }
         
        

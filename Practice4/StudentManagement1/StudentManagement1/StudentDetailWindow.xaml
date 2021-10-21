@@ -38,8 +38,8 @@
         <TextBox  Grid.Row="2" Grid.Column="2"  VerticalAlignment="Center"  Padding="5" FontSize="20"  Text="{Binding Path =lastname}" ></TextBox>
         <TextBox  Grid.Row="5" Grid.Column="2"  VerticalAlignment="Center"  Padding="5" FontSize="20" Text="{Binding Path =email}" ></TextBox>
 
-        <Button Content="Save" Command="{Binding SaveCommand}" Grid.Row="6" HorizontalAlignment="Right" Padding="10" VerticalAlignment="Center" Width="80" FontSize="20" ></Button>
-        <Button Content="Cancel" Grid.Row="6" Grid.Column="2" HorizontalAlignment="Left" Padding="10" VerticalAlignment="Center" Width="80" FontSize="20"  ></Button>
+        <Button Content="Save" Command="{Binding SaveCommand}" Grid.Row="6" HorizontalAlignment="Right" Padding="10" VerticalAlignment="Center" Width="80" FontSize="20" Click="Button_Click" ></Button>
+        <Button Content="Cancel" Command="{Binding CancelCommand}" Grid.Row="6" Grid.Column="2" HorizontalAlignment="Left" Padding="10" VerticalAlignment="Center" Width="80" FontSize="20"  ></Button>
 
         <RadioButton GroupName="gioitinh"  IsChecked="{Binding Ismale}"   Grid.Row="3" Grid.Column="2" VerticalAlignment="Top"   Padding="10" FontSize="20">Male</RadioButton>
         <RadioButton GroupName="gioitinh"  IsChecked="{Binding IsFemale}" Grid.Row="3" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Top"  Padding="10" FontSize="20">FeMale</RadioButton>
