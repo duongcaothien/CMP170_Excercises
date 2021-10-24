@@ -1,0 +1,63 @@
+﻿<Window x:Class="StudentManagement.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StudentManagement"
+        mc:Ignorable="d"
+        Title="Student Detail" Height="450" Width="800">
+    <Window.Resources>
+        <Style x:Key="styleTextBox" TargetType="TextBox">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="FontFamily" Value="TimeNewRoman"/>
+            <Setter Property="FontSize" Value="15"/>
+
+        </Style>
+        <Style x:Key="styleLabel" TargetType="Label">
+            <Setter Property="VerticalAlignment" Value="Center" ></Setter>
+            <Setter Property="HorizontalAlignment" Value="Center" ></Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Label Content="Student ID" Style="{StaticResource styleLabel}" FontSize="15"></Label>
+        <Label Content="First Name" Style="{StaticResource styleLabel}" FontSize="15" Grid.Row="1"></Label>
+        <Label Content="Last Name" Style="{StaticResource styleLabel}" FontSize="15" Grid.Row="2"></Label>
+        <Label Content="Gender" Style="{StaticResource styleLabel}" FontSize="15" Grid.Row="3"></Label>
+        <Label Content="Class" Style="{StaticResource styleLabel}" FontSize="15" Grid.Row="4"></Label>
+        <Label Content="Email" Style="{StaticResource styleLabel}" FontSize="15" Grid.Row="5"></Label>
+
+        <TextBox Grid.Column="1" Grid.ColumnSpan="2" Style="{StaticResource styleTextBox}" Text="{Binding Path= StudentId}"></TextBox>
+        <TextBox Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1"  Style="{StaticResource styleTextBox}" Text="{Binding Path= Firstname}"></TextBox>
+        <TextBox Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="2"  Style="{StaticResource styleTextBox}" Text="{Binding Path= Lastname}"></TextBox>
+        <RadioButton Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" GroupName="check" IsChecked="{Binding Path= IsMale}" >Male</RadioButton>
+        <RadioButton Grid.Column="2" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" GroupName="check" IsChecked="{Binding Path= IsFeMale}" >Female</RadioButton>
+        <ComboBox  Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Center"  Padding="8" FontSize="20" HorizontalAlignment="Left" Width="533" Text="{Binding Class}">
+            <ComboBoxItem IsSelected="true" Content="{Binding Path=Class}"></ComboBoxItem>
+            <ComboBoxItem IsSelected="True" >19DTHQA1</ComboBoxItem>
+            <ComboBoxItem  >19DTHQA2</ComboBoxItem>
+            <ComboBoxItem  >19DTHQA3</ComboBoxItem>
+        </ComboBox>
+        <TextBox Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="5"  Style="{StaticResource styleTextBox}"></TextBox>
+
+        <Button Command="{Binding SaveCommand}"  Grid.Column="1" Grid.Row="6" Width="100" Height="30" HorizontalAlignment="Left">Save</Button>
+        <Button Command="{Binding CancelCommand}"  Grid.Column="1" Grid.Row="6" Width="100" Height="30" HorizontalAlignment="Right">Cancel</Button>
+    </Grid>
+</Window>
