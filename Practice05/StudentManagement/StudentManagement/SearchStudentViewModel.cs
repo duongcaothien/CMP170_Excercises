@@ -75,6 +75,7 @@ namespace StudentManagement
         }
         public void DoReset()
         {
+            Students.Clear();
             Searchkeyword = null;
             SelectedClass = null;
         }
