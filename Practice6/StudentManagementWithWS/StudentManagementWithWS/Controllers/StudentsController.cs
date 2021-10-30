@@ -12,17 +12,17 @@ namespace StudentManagementWithWS.Controllers
         {
             m_studentService = studentService;
         }
+
         [HttpGet]
         public IActionResult SearchStudent(string keyword, string hutechClass)
-{
-
+        {
             return Ok(m_studentService.SearchStudent(keyword, hutechClass));
         }
+
         [HttpGet("{id}")]
         public IActionResult LoadStudentById(int id)
         {
-            m_studentService.LoadStudentById(id);
-            return Ok(new Student());
+            return Ok(m_studentService.LoadStudentById(id));
         }
 
         [HttpPost]
@@ -31,6 +31,7 @@ namespace StudentManagementWithWS.Controllers
             m_studentService.UpdateOrCreateStudent(student);
             return Ok();
         }
+
         [HttpDelete("{id}")]
         public IActionResult DeleteStudentById(int id)
         {

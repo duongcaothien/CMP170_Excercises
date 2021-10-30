@@ -12,7 +12,7 @@ namespace StudentManagementWithWS
         private IList<Student> m_students;
         public StudentServiceWithFile()
         {
-            var data = File.ReadAllText("student_data.json");
+            var data = File.ReadAllText(@"C:\Users\Admin\source\repos\CMP170_Excercises\Practice6\StudentManagementWithWS\StudentManagementWithWS\Controllers\Services\Student_Data.json");
             m_students = JsonSerializer.Deserialize<List<Student>>(data);
         }
         public void DeleteStudentById(int id)

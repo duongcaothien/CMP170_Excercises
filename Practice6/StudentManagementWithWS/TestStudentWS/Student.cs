@@ -1,5 +1,7 @@
 ﻿
 
+using System;
+
 namespace StudentManagementWithWS
 {
     public class s
@@ -12,7 +14,7 @@ namespace StudentManagementWithWS
             public string email { get; set; }
             public string gender { get; set; }
             public string Class { get; set; }
-            public decimal gpa { get; set; }
+            public string gpa { get; set; }
         }
         
     }
