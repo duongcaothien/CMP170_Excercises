@@ -61,7 +61,6 @@ namespace TeacherManagement
         private ITeacherService m_teacherSrv;
         public SearchTeacherViewModel()
         {
-            //m_teacherSrv = new TeacherServiceWithFile();
             m_teacherSrv = new TeacherServiceWithEF();
             Teachers = new ObservableCollection<Teacher>(m_teacherSrv.SearchTeacher(string.Empty, string.Empty));
             OpenDetailCommand = new ConditionalCommand(x => DoOpenDetail());
@@ -75,14 +74,10 @@ namespace TeacherManagement
         {
             Searchkeyword = null;
             SelectedClass = null;
-            var result = m_teacherSrv.SearchTeacher(Searchkeyword,SelectedClass);
-            foreach (var s in result)
-            {
-                Teachers.Add(s);
-            }
+            DoSearch();
         }
 
-        private void DoSearch()
+        public void DoSearch()
         {
             Teachers.Clear();
             var result = m_teacherSrv.SearchTeacher(Searchkeyword, SelectedClass);
@@ -95,6 +90,7 @@ namespace TeacherManagement
         private void DoDelete()
         {
             m_teacherSrv.DeleteTeacherById(SelectedTeacher.teacherId);
+            DoSearch();
         }
 
 

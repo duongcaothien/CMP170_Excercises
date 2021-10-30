@@ -38,9 +38,7 @@ namespace TeacherManagement
             using (var ctx = new UniversityContext())
             {
                 var result = ctx.Teachers.Where(s => (s.Class == hutechclass || String.IsNullOrEmpty(hutechclass)) && (s.firstname == keyword || s.lastname == keyword || string.IsNullOrEmpty(keyword)))
-                              .OrderBy(s => s.firstname).ToList();
-
-
+                              .OrderBy(s => s.teacherId).ToList();
                 return result;
             }
         }

@@ -19,7 +19,6 @@
         <local:SearchTeacherViewModel/>
     </Window.DataContext>
 
-
     <Window.Resources>
         <Style x:Key="styleTextBox" TargetType="TextBox">
             <Setter Property="VerticalAlignment" Value="Center"/>
@@ -138,7 +137,6 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*" ></ColumnDefinition>
             </Grid.ColumnDefinitions>
-
 
             <Button HorizontalAlignment="Right" Style="{StaticResource MaterialDesignPaperButton}" Grid.Column="2" Content="Open Detail Teacher" Command="{Binding OpenDetailCommand}"/>
             <Button HorizontalAlignment="Left" Style="{StaticResource MaterialDesignPaperButton}" Grid.Column="0" Content="Reset  " Command="{Binding ResetCommand}"/>

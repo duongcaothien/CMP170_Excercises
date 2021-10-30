@@ -91,11 +91,11 @@
             <RadioButton Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" GroupName="check" IsChecked="{Binding Path= IsMale}" >Male</RadioButton>
             <RadioButton Grid.Column="2" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" GroupName="check" IsChecked="{Binding Path= IsFeMale}" >Female</RadioButton>
 
-            <ComboBox Style="{StaticResource MaterialDesignOutlinedComboBox}" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Center"  Padding="8" FontSize="20" HorizontalAlignment="Center" Width="400" >
-                <ComboBoxItem IsSelected="true" Content="{Binding Path=@class}"></ComboBoxItem>
-                <ComboBoxItem IsSelected="True" >19DTHQA1</ComboBoxItem>
-                <ComboBoxItem  >19DTHQA2</ComboBoxItem>
-                <ComboBoxItem  >19DTHQA3</ComboBoxItem>
+            <ComboBox Style="{StaticResource MaterialDesignOutlinedComboBox}" SelectedValuePath="Content" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Center"  Padding="8" FontSize="20" HorizontalAlignment="Center" Width="400" >
+                <ComboBoxItem Content="{Binding Path=@class}"></ComboBoxItem>
+                <ComboBoxItem>19DTHQA1</ComboBoxItem>
+                <ComboBoxItem>19DTHQA2</ComboBoxItem>
+                <ComboBoxItem>19DTHQA3</ComboBoxItem>
             </ComboBox>
 
             <Button Foreground="White" Background="Green" Command="{Binding SaveCommand}"  Grid.Column="4" Grid.Row="4" Width="100" Height="30" HorizontalAlignment="Center">Save</Button>

@@ -122,8 +122,7 @@ namespace TeacherManagement
             m_teacher.gender = Gender;
             m_teacher.Class = @class;
             m_teacherService.UpdateOrCreateTeacher(m_teacher); ;
-            var handler = CloseRequest;
-            if (handler != null) handler(this, EventArgs.Empty); ;
+            Docancel();
         }
 
 
