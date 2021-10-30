@@ -1,9 +1,7 @@
-﻿
+﻿using System;
 
 namespace StudentManagementWithWS
 {
-    public class s
-    {
         public class Student
         {
             public int studentId { get; set; }
@@ -15,5 +13,4 @@ namespace StudentManagementWithWS
             public decimal gpa { get; set; }
         }
         
-    }
 }

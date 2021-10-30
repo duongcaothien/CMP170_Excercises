@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.IO;
 using System.Text.Json;
-using static StudentManagementWithWS.s;
 
 namespace StudentManagementWithWS
 {
@@ -12,7 +11,7 @@ namespace StudentManagementWithWS
         private IList<Student> m_students;
         public StudentServiceWithFile()
         {
-            var data = File.ReadAllText(@"C:\Users\Admin\source\repos\CMP170_Excercises\Practice6\StudentManagementWithWS\StudentManagementWithWS\Controllers\Services\Student_Data.json");
+            var data = File.ReadAllText("Student_Data.json");
             m_students = JsonSerializer.Deserialize<List<Student>>(data);
         }
         public void DeleteStudentById(int id)
@@ -30,9 +29,7 @@ namespace StudentManagementWithWS
         public IList<Student> SearchStudent(string keyword, string hutechClass)
         {
             var result = m_students.Where(s => (s.Class == hutechClass || hutechClass == null) && (s.firstname == keyword || s.lastname == keyword || keyword == null))
-                               .OrderBy(s => s.firstname).ToList();
-
-
+                               .OrderBy(s => s.studentId).ToList();
             return result;
         }
 

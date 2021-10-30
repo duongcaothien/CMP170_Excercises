@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using static StudentManagementWithWS.s;
 
 namespace StudentManagementWithWS.Controllers
 {
@@ -35,8 +34,7 @@ namespace StudentManagementWithWS.Controllers
         [HttpDelete("{id}")]
         public IActionResult DeleteStudentById(int id)
         {
-            m_studentService.DeleteStudentById(id);
-            return Ok();
+            return Ok(DeleteStudentById(id));
         }
     }
 }
