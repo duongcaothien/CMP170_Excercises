@@ -22,9 +22,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Update="Controllers\Services\Student_Data.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Update="Student_Data.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

@@ -4,8 +4,6 @@ using System;
 
 namespace StudentManagementWithWS
 {
-    public class s
-    {
         public class TestStudentWS
         {
             public int studentId { get; set; }
@@ -14,8 +12,7 @@ namespace StudentManagementWithWS
             public string email { get; set; }
             public string gender { get; set; }
             public string Class { get; set; }
-            public string gpa { get; set; }
+            public decimal gpa { get; set; }
         }
         
-    }
 }
